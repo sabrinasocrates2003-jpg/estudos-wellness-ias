@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wellness em movimento: estudo comparativo de IAs (Brasil 2026–2030)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{--bg:#F6F7FB;--card:#fff;--ink:#14171F;--mut:#5A6072;--line:#DfE3EE;--blue:#2255FF;--org:#FF6A1A;--teal:#00A894;--yel:#FFC51F;--ok:#0B7A5A;--warn:#B25E00;--bad:#B3261E;--vio:#5B3FD6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1320;--card:#181D2E;--ink:#F1F3FA;--mut:#A3AAC0;--line:#2A3047;--blue:#6C8CFF;--org:#FF8A4D;--teal:#2FD3BE;--ok:#4FD6A4;--warn:#FFB45C;--bad:#FF8C84;--vio:#A794FF}}
+:root[data-theme="dark"]{--bg:#0F1320;--card:#181D2E;--ink:#F1F3FA;--mut:#A3AAC0;--line:#2A3047;--blue:#6C8CFF;--org:#FF8A4D;--teal:#2FD3BE;--ok:#4FD6A4;--warn:#FFB45C;--bad:#FF8C84;--vio:#A794FF}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:800}h2{font-size:1.7rem;font-weight:800}h3{font-size:1.1rem;font-weight:600}
+a{color:var(--blue)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:10px 14px;overflow-x:auto;max-width:1000px;margin-inline:auto}
+nav a{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:84px;padding:6px 8px;border-radius:14px;text-decoration:none;color:var(--ink);font-size:.78rem;font-weight:600;text-align:center}
+nav a i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--c);color:#fff;transition:transform .2s}
+nav a:hover i{transform:translateY(-3px) rotate(-8deg)}
+nav a[aria-current="page"]{background:var(--card);outline:2px solid var(--c)}
+nav svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+main{max-width:1000px;margin:0 auto;padding:28px 18px 60px}
+section[hidden]{display:none}
+.hero{position:relative;padding:34px 0 10px;overflow:hidden}
+.hero p.lead{font-size:1.15rem;max-width:34em;color:var(--mut)}
+.orbs span{position:absolute;border-radius:50%;opacity:.9;z-index:-1}
+.o1{width:190px;height:190px;background:var(--blue);right:-40px;top:-30px}.o2{width:110px;height:110px;background:var(--org);right:120px;top:120px}.o3{width:70px;height:70px;background:var(--yel);right:30px;top:170px}.o4{width:46px;height:46px;background:var(--teal);right:200px;top:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.chip{padding:5px 12px;border-radius:99px;background:var(--c);color:#fff;font-weight:600;font-size:.88rem}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;border-top:5px solid var(--c,var(--blue))}
+.box p{margin:.3em 0 0;color:var(--mut)}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:640px}
+th,td{padding:9px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--bg);font-weight:600}
+.tag{display:inline-block;padding:2px 9px;border-radius:99px;font-weight:600;font-size:.8rem;border:1.5px solid currentColor;white-space:nowrap}
+.s{color:var(--ok)}.d{color:var(--warn)}.o{color:var(--vio)}.x{color:var(--bad)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tabs button{font:600 .92rem Figtree,sans-serif;padding:8px 16px;border-radius:99px;border:2px solid var(--blue);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--blue);color:#fff}
+.tab[hidden]{display:none}
+pre{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--org);border-radius:12px;padding:16px;font:400 .88rem/1.55 Figtree,sans-serif;margin:0}
+.note{background:var(--card);border-left:5px solid var(--yel);padding:12px 16px;border-radius:10px;margin:16px 0}
+.cta{margin-top:30px;padding:28px;border-radius:20px;background:var(--blue);color:#fff}
+.cta h2{margin-bottom:.3em}.cta a{display:inline-block;margin-top:10px;padding:10px 20px;border-radius:99px;background:var(--yel);color:#14171F;font-weight:600;text-decoration:none}
+ul.t{padding-left:1.1em}ul.t li{margin:.35em 0}
+</style>
+</head>
+<body>
+<nav aria-label="Menu principal"><ul>
+<li><a href="#abertura" style="--c:var(--blue)"><i><svg viewBox="0 0 24 24"><path d="M2 9c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 3-1.5 5-.5M2 16c2.5-2.5 5-2.5 7.5 0s5 2.5 7.5 0 3-1.5 5-.5"/></svg></i>Abertura</a></li>
+<li><a href="#prompt" style="--c:var(--org)"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.5"/><path d="M12 3v7.5M12 13.5V21M3 12h7.5M13.5 12H21"/></svg></i>Prompt-mestre</a></li>
+<li><a href="#protocolo" style="--c:var(--teal)"><i><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="6"/><rect x="7" y="9.5" width="10" height="5" rx="2.5"/></svg></i>Protocolo</a></li>
+<li><a href="#sintese" style="--c:var(--yel)"><i style="color:#14171F"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5 5.5c4 2.5 4 10.5 0 13M19 5.5c-4 2.5-4 10.5 0 13"/></svg></i>Síntese auditada</a></li>
+<li><a href="#conclusao" style="--c:var(--vio)"><i><svg viewBox="0 0 24 24"><path d="M12 20c-3-2-4-6 0-12 4 6 3 10 0 12zM12 20c-5 0-8-3-9-7 4 0 7 2 9 7zM12 20c5 0 8-3 9-7-4 0-7 2-9 7z"/></svg></i>Conclusão</a></li>
+<li><a href="#anexos" style="--c:var(--ink)"><i style="color:var(--bg)"><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h13l-3 4.5 3 4.5H5"/></svg></i>Anexos</a></li>
+</ul></nav>
+<main>
+
+<section id="abertura">
+<div class="hero"><div class="orbs" aria-hidden="true"><span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span></div>
+<h1>Treinar com métricas.<br>Viver com gente.</h1>
+<p class="lead">Existe espaço no Brasil para uma plataforma que una desempenho esportivo e vida social. Este estudo testou três IAs na busca por essa oportunidade e auditou o que cada uma entregou.</p></div>
+<div class="grid">
+<div class="box" style="--c:var(--blue)"><h3>Objetivo</h3><p>Identificar e qualificar oportunidades de negócio digital em wellness no Brasil (2026–2030) para um público jovem e ativo, em triathlon amador, yoga e tênis, e avaliar a confiabilidade de uma síntese feita por IA.</p></div>
+<div class="box" style="--c:var(--org)"><h3>Estudo</h3><p>Comparativo de três IAs (GPT, Gemini, DeepSeek) com o mesmo prompt, sintetizadas por uma quarta (Claude), com auditoria. Aplicado em 10/10/2026.</p></div>
+</div>
+<h2 style="margin-top:28px">Régua analítica</h2>
+<p>A Etapa 1 mede o que cada IA entregou. A Etapa 2 mede o que a síntese preservou.</p>
+<div class="grid">
+<div class="box" style="--c:var(--blue)"><h3>Etapa 1 · Estrutura exigida</h3><p><b>5 perguntas</b> (quem, quanto dói, quem paga, por que você, por que agora), <b>3 Ms</b> (demanda, tamanho e estrutura, margem) e <b>escolha do modelo de negócio</b>.</p></div>
+<div class="box" style="--c:var(--teal)"><h3>Etapa 2 · Auditoria da síntese</h3><p>Cada afirmação é classificada como <b>sustentada</b>, <b>distorcida</b>, <b>órfã</b> ou <b>suprimida</b>, e os números são conferidos em fontes primárias.</p></div>
+</div>
+</section>
+
+<section id="prompt" hidden>
+<h2>O prompt-mestre</h2>
+<p>O mesmo texto foi enviado às três IAs, sem alterações.</p>
+<pre>Você é um consultor sênior em construção de negócios e é especialista no ramo wellness. Seu objetivo é detectar e qualificar oportunidades de negócio no mercado brasileiro no horizonte 2026–2030. As oportunidades estão relacionadas ao mundo digital, público jovem e ativo que gosta de acompanhar suas métricas de desempenho nos esportes (foque nas modalidades do triathlon amador, yoga e tenis) mas não quer deixar a vida social de lado. Assim, liste essas oportunidades a partir desses requisitos:
+
+As 5 perguntas (respodê-las de forma objetiva)
+1. Quem exatamente tem esse problema? Aqui deve ser específico, não tipo “empresas” "jovens”;
+2. Quanto dói? Defina o problema de forma que fique evidente qual é essa dor, qual o incômodo, como isso nos gera retorno;
+3. Quem paga, e com que dinheiro? (Em saúde, educação e no setor público, quem usa raramente é quem paga. Descubra o orçamento antes do produto.)
+4. Por que você, e não o incumbente? (Se um concorrente estabelecido pode copiar em três meses, não é oportunidade — é favor prestado a ele.)
+5. Por que agora e não em 2020 ou 2035?
+
+Os 3Ms (desenvolver de forma objetiva cada um desses Ms para a oportunidade)
+1. Demanda de Mercado: Qual é a audiência-alvo? Qual a durabilidade do produto no mercado? Os clientes estão acessíveis pelos canais? O custo de captação se recupera em menos de um ano?
+2. Tamanho e Estrutura: O mercado cresce, é emergente, é fragmentado? Há barreiras de entrada ou custos de saída? Quantos competidores-chave existem? Em que estágio do ciclo de vida está o produto?
+3. Análise de Margem: Quais são as forças do negócio? Qual a margem bruta possível? Qual o ponto de equilíbrio e o retorno? Como é a cadeia de valor até o cliente final?
+
+Escolher o modelo de negócio (escolher um desses e explicar o porquê da escolha)
+1. Intermediação de negócios  2. Comercialização de propaganda  3. Mercado virtual  4. Empresarial  5. Rede social
+
+Por fim, oriento que utilize fontes oficiais de dados e em caso de falta de informação, evnidencie que não tem o numero/dado de forma assertiva. Ao final elenque todas as fontes usadas.
+
+A estrutura dessa resposta deve iniciar com um breve resumo dessas oportunidades elencadas, levando em consideração o mercado do Brasil. Após isso, traga em titulos os requisitos que eu trouxe e destrinche cada um deles em bullet points.</pre>
+<h2 style="margin-top:26px">Justificativa, bloco a bloco</h2>
+<div class="grid">
+<div class="box" style="--c:var(--blue)"><h3>Papel e objetivo</h3><p>Define a perspectiva (consultor de negócios em wellness) e o recorte: Brasil, 2026–2030, digital, público jovem, três modalidades.</p></div>
+<div class="box" style="--c:var(--org)"><h3>5 perguntas</h3><p>Força especificidade (quem, quanto dói, quem paga) e testa defensabilidade (incumbente, timing).</p></div>
+<div class="box" style="--c:var(--teal)"><h3>3 Ms</h3><p>Qualifica a oportunidade em demanda, estrutura de mercado e margem, com perguntas que exigem números ou a declaração de que faltam.</p></div>
+<div class="box" style="--c:var(--yel)"><h3>Modelo de negócio</h3><p>Obriga uma escolha entre cinco opções e uma justificativa, o que expõe divergências entre as IAs.</p></div>
+<div class="box" style="--c:var(--vio)"><h3>Fontes e lacunas</h3><p>Pede fontes oficiais e a admissão de dados ausentes. É o bloco que mede o rigor de cada resposta.</p></div>
+<div class="box" style="--c:var(--ink)"><h3>Formato de saída</h3><p>Resumo inicial e títulos com bullets padronizam as respostas e permitem a comparação lado a lado.</p></div>
+</div>
+</section>
+
+<section id="protocolo" hidden>
+<h2>Protocolo de teste</h2>
+<div class="wrap"><table>
+<tr><th>Ferramenta</th><th>Versão / modo</th><th>Data</th><th>Chat</th><th>Pesquisa web</th></tr>
+<tr><td>GPT</td><td>Gratuito, modo Pensar</td><td>10/10/2026</td><td>Antigo (da Atividade 1)</td><td>Ativa</td></tr>
+<tr><td>Gemini</td><td>Pro, versão Média</td><td>10/10/2026</td><td>Antigo (da Atividade 1)</td><td>Ativa</td></tr>
+<tr><td>DeepSeek</td><td>Pesquisa inteligente, gratuita</td><td>10/10/2026</td><td>Novo</td><td>Ativa</td></tr>
+<tr><td>Claude (síntese e auditoria)</td><td>Sonnet 5.5, claude.ai</td><td>10/10/2026</td><td>Chat em que já havia pesquisa prévia sobre o tema</td><td>Disponível</td></tr>
+</table></div>
+<div class="note"><b>Limites do protocolo.</b> Chats antigos (GPT e Gemini) podem trazer contexto anterior. A síntese foi feita num chat com pesquisa prévia, o que permitiu corrigir números, mas contamina a neutralidade. Número exato dos modelos e configuração de memória ou personalização: <b>não informados</b>.</div>
+<h3>Prompt de síntese</h3>
+<pre>A partir dessas três respostas sobre o mesmo assunto, encontrar oportunidades no mundo wellness em relação ao mercado do Brasil até 2030. Sintetize, no formato de resumo inicial e depois discorrendo em titulos e bullet points cada requisito, mas de forma bem objetiva, que não canse o leitor que for ler esses resultados. O objetivo é resumir e entender onde foram as convergências e divergências (a resposta que mais deve ser centralizada é a do Gemini, que está mais alinhada com o que eu pensei, porém, com explicações de convencimento das outras respostas que a primeira acabou não aprofundando um pouco.</pre>
+</section>
+
+<section id="sintese" hidden>
+<h2>A síntese auditada</h2>
+<p>Das 14 afirmações conferidas: <span class="tag s">3 sustentadas</span> <span class="tag d">5 distorcidas</span> <span class="tag o">2 órfãs</span> <span class="tag x">4 suprimidas</span></p>
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" data-tab="t1">Rastreabilidade</button>
+<button role="tab" aria-selected="false" data-tab="t2">Fontes primárias</button>
+<button role="tab" aria-selected="false" data-tab="t3">Régua da Etapa 1</button></div>
+
+<div class="tab" id="t1"><div class="wrap"><table>
+<tr><th>Afirmação da síntese</th><th>Origem</th><th>Status</th><th>Comentário</th></tr>
+<tr><td>Hub social multiesportivo como tese comum</td><td>GPT, Gemini, DeepSeek</td><td><span class="tag s">Sustentada</span></td><td>Público multimodalidade só é explícito no DeepSeek.</td></tr>
+<tr><td>Divergência: intermediação (GPT) × rede social (Gemini, DeepSeek)</td><td>As três</td><td><span class="tag s">Sustentada</span></td><td>DeepSeek fala em assinatura, não em freemium.</td></tr>
+<tr><td>Strava sem suporte a yoga e tênis</td><td>DeepSeek</td><td><span class="tag s">Sustentada</span></td><td>Fiel à origem, mas contestável: o Strava registra mais de 40 modalidades.</td></tr>
+<tr><td>Todas apontam o cold start como risco</td><td>DeepSeek; GPT em parte</td><td><span class="tag d">Distorcida</span></td><td>Gemini trata a densidade local como vantagem.</td></tr>
+<tr><td>Durabilidade alta como convergência</td><td>As três</td><td><span class="tag d">Distorcida</span></td><td>Gemini: altíssima. DeepSeek: média-alta. GPT: condicionada.</td></tr>
+<tr><td>DeepSeek reconhece que a premissa de CAC é frágil</td><td>DeepSeek</td><td><span class="tag d">Distorcida</span></td><td>CAC de R$ 60–120 vem sem fonte; só alerta acima de R$ 200.</td></tr>
+<tr><td>GPT mostra concorrentes em cada vertical</td><td>GPT</td><td><span class="tag d">Distorcida</span></td><td>Nomeia concorrentes em tênis e yoga; em triathlon, só ferramentas genéricas.</td></tr>
+<tr><td>Piloto em tênis ou beach tennis</td><td>GPT, Gemini</td><td><span class="tag d">Distorcida</span></td><td>GPT condiciona o piloto a provar lacuna frente a Playtomic e LetzPlay.</td></tr>
+<tr><td>Rede social como núcleo e intermediação como camada secundária</td><td>Nenhuma</td><td><span class="tag o">Órfã</span></td><td>Opinião da quarta IA apresentada como síntese.</td></tr>
+<tr><td>85% vale só para corrida; 62,4% é tempo de prática</td><td>Nenhuma</td><td><span class="tag o">Órfã</span></td><td>Correção correta, mas veio de pesquisa prévia e não estava rotulada como verificação.</td></tr>
+<tr><td>Vigitel: 42,3% ativos, estável entre 2019 e 2024</td><td>GPT</td><td><span class="tag x">Suprimida</span></td><td>Único dado oficial das três respostas. Contradiz a narrativa de crescimento.</td></tr>
+<tr><td>Tese "não comprovada" e hierarquia entre modalidades</td><td>GPT</td><td><span class="tag x">Suprimida</span></td><td>Tênis isolado é melhoria incremental; triathlon é vertical posterior.</td></tr>
+<tr><td>Erro de cálculo do DeepSeek</td><td>DeepSeek</td><td><span class="tag x">Suprimida</span></td><td>3–5% de 13,4 mi são 402–670 mil, não 40–67 mil. O breakeven citado (80–150 mil) fica acima do potencial declarado.</td></tr>
+<tr><td>LGPD × moat baseado em biometria</td><td>GPT, Gemini</td><td><span class="tag x">Suprimida</span></td><td>Só o GPT levanta o risco, que colide com a base do moat do Gemini.</td></tr>
+</table></div></div>
+
+<div class="tab" id="t2" hidden><div class="wrap"><table>
+<tr><th>Dado</th><th>Origem</th><th>Resultado</th><th>Fonte conferida</th></tr>
+<tr><td>Brasil sedia 13 dos 18 eventos premier do circuito de beach tennis</td><td>Gemini</td><td><span class="tag s">Confirmado</span> Vale para o circuito ITF de beach tennis, não para raquetes em geral. Em 2025: 13 de 19.</td><td>ITF (out/2024; mai/2025)</td></tr>
+<tr><td>Corridas oficiais de 2.827 para 5.241 (+85%)</td><td>Gemini</td><td><span class="tag d">Parcial</span> Vale só para corrida de rua, não para triathlon.</td><td>Abraceo/CBAt</td></tr>
+<tr><td>62,4% dos triatletas</td><td>DeepSeek</td><td><span class="tag d">Parcial</span> É a parcela com menos de 3 anos de prática (782 atletas, dez/2022), não crescimento.</td><td>Ticket Sports</td></tr>
+<tr><td>77,5% dos triatletas são homens</td><td>DeepSeek</td><td><span class="tag x">Não confirmado</span> Estudo acadêmico com 411 triatletas: 69% homens (amostra diferente).</td><td>SciELO (RBME)</td></tr>
+<tr><td>217.925 praticantes de yoga no SUS</td><td>DeepSeek</td><td><span class="tag s">Confirmado</span> +290% desde 2022. Mede participantes no SUS, não mercado privado.</td><td>Ministério da Saúde</td></tr>
+<tr><td>Tênis: 2,6 para 4,1 milhões de praticantes</td><td>DeepSeek</td><td><span class="tag d">Parcial</span> Só em colunas e entrevistas. Outras fontes citam 2,2 a 2,5 milhões. A definição de praticante varia.</td><td>Diário do Litoral; Poder360; CBT</td></tr>
+<tr><td>13,4 milhões de usuários de wearables</td><td>DeepSeek</td><td><span class="tag x">Não confirmado</span> Só relatórios comerciais pagos, sem esse número.</td><td>Busca web</td></tr>
+<tr><td>Margem bruta de 70–85% e breakeven no mês 18–24</td><td>Gemini, DeepSeek</td><td><span class="tag x">Sem fonte</span> Estimativas das IAs. O GPT recusou-se a estimar.</td><td>Nenhuma</td></tr>
+<tr><td>Mulheres excluídas da cultura esportiva</td><td>DeepSeek</td><td><span class="tag d">Contradita em parte</span> Em 2025 as mulheres foram 52,4% das inscrições na Ticket Sports (todas as modalidades). Triathlon isolado não verificado.</td><td>Ticket Sports 2025/26</td></tr>
+</table></div></div>
+
+<div class="tab" id="t3" hidden><div class="wrap"><table>
+<tr><th>IA</th><th>5 perguntas</th><th>3 Ms</th><th>Modelo escolhido</th><th>Fontes e lacunas</th></tr>
+<tr><td>GPT</td><td>Respondidas para 3 oportunidades</td><td>Por oportunidade, sem estimar margem</td><td>Intermediação</td><td>9 fontes, várias oficiais (Vigitel, CBTri, LGPD). Lacunas marcadas.</td></tr>
+<tr><td>Gemini</td><td>Respondidas para 1 tese</td><td>Completos, com números sem fonte</td><td>Rede social (freemium)</td><td>3 fontes. Só a lacuna de yoga é declarada.</td></tr>
+<tr><td>DeepSeek</td><td>Respondidas com segmentos detalhados</td><td>Completos, com cálculos (um com erro)</td><td>Rede social (assinatura)</td><td>10 fontes, em maioria secundárias ou comerciais. 3 lacunas declaradas.</td></tr>
+</table></div></div>
+</section>
+
+<section id="conclusao" hidden>
+<h2>Conclusão</h2>
+<h3>A oportunidade defendida</h3>
+<p>Uma <b>rede social esportiva como núcleo</b>, para formar vínculos de amizade e relacionamento entre praticantes de triathlon, tênis e yoga, ancorada em dados de desempenho. O argumento: o que falta ao público jovem é pertencimento, e os incumbentes registram atividade, mas não organizam encontros por nível, modalidade e localização.</p>
+<div class="grid">
+<div class="box" style="--c:var(--teal)"><h3>A favor</h3><p>Gemini e DeepSeek convergem na rede como defesa competitiva (grafo social e custo de saída). Em beach tennis, o Brasil sedia 13 dos 18 eventos premier do circuito ITF.</p></div>
+<div class="box" style="--c:var(--org)"><h3>Riscos</h3><p>Cold start e densidade local (GPT, DeepSeek), colisão com a LGPD ao usar dados biométricos, e um mercado de yoga e triathlon sem dado de tamanho confirmado.</p></div>
+<div class="box" style="--c:var(--blue)"><h3>Próximo passo</h3><p>Piloto de 90 dias em uma cidade e uma modalidade, medindo retenção e conexões formadas, antes de qualquer investimento em tecnologia.</p></div></div>
+<h3 style="margin-top:24px">O que aprendi ao encadear IAs</h3>
+<ul class="t">
+<li><b>A síntese puxa para o consenso.</b> 5 de 14 afirmações viraram acordo onde havia divergência de grau.</li>
+<li><b>O que enfraquece a tese some primeiro.</b> Vigitel, a tese "não comprovada" e o risco de LGPD foram suprimidos.</li>
+<li><b>Números circulam sem fonte.</b> Dos 9 dados conferidos, 3 não foram confirmados, e um cálculo estava errado por um fator de 10.</li>
+<li><b>A síntese produziu conteúdo novo.</b> Duas afirmações não existiam nas origens. Síntese e verificação devem ser etapas separadas e rotuladas.</li>
+<li><b>Contexto do chat importa.</b> Chats antigos e uma síntese com pesquisa prévia limitam a comparabilidade e precisam constar no protocolo.</li></ul>
+<div class="cta"><h2>Vida social e vida ativa, lado a lado.</h2>
+<p>Agradecimentos a quem leu, questionou e testou este estudo. O próximo passo é tirar a ideia do papel, com gente treinando junto.</p>
+<a href="#abertura">Voltar ao início</a></div>
+</section>
+
+<section id="anexos" hidden>
+<h2>Anexos</h2>
+<p>Respostas completas, sem edição. O texto integral de cada uma entra na próxima atualização do site.</p>
+<div class="grid">
+<div class="box" style="--c:var(--blue)"><h3>A · GPT (Pensar)</h3><p>Texto integral em breve.</p></div>
+<div class="box" style="--c:var(--org)"><h3>B · Gemini Pro (Média)</h3><p>Texto integral em breve.</p></div>
+<div class="box" style="--c:var(--teal)"><h3>C · DeepSeek (Pesquisa inteligente)</h3><p>Texto integral em breve.</p></div>
+<div class="box" style="--c:var(--vio)"><h3>D · Síntese (Claude)</h3><p>Texto integral em breve.</p></div>
+</div>
+</section>
+</main>
+<script>
+var P=['abertura','prompt','protocolo','sintese','conclusao','anexos'];
+function go(){var h=location.hash.slice(1);if(P.indexOf(h)<0)h='abertura';
+P.forEach(function(p){document.getElementById(p).hidden=p!==h});
+document.querySelectorAll('nav a').forEach(function(a){if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+window.scrollTo(0,0)}
+window.addEventListener('hashchange',go);go();
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
+document.querySelectorAll('.tab').forEach(function(t){t.hidden=t.id!==b.dataset.tab})})});
+</script>
+</body>
+</html>
